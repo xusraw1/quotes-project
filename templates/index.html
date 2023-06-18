@@ -9,15 +9,16 @@
 <div class="container">
     <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Quote</a></li>
             <li class="nav-item"><a href="/quotes-list" class="nav-link">Quotes List</a></li>
             <li class="nav-item"><a href="/quotes-long" class="nav-link">Long Quotes</a></li>
             <li class="nav-item"><a href="/quotes-short" class="nav-link">Short Quotes</a></li>
         </ul>
     </header>
 </div>
+<br><br>
 <div class="container">
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-primary" role="alert">
         <h3 class="text-center"><b>{{ context.content }}</b></h3>
         <hr>
         <p style="text-align: right; color: red"><i><b>{{ context.author }}</b></i></p>

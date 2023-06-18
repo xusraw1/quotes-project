@@ -6,22 +6,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-<br>
 <div class="container">
+    <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Quote</a></li>
+            <li class="nav-item"><a href="/quotes-list" class="nav-link">Quotes List</a></li>
+            <li class="nav-item"><a href="/quotes-long" class="nav-link">Long Quotes</a></li>
+            <li class="nav-item"><a href="/quotes-short" class="nav-link">Short Quotes</a></li>
+        </ul>
+    </header>
+</div>
+<div class="container">
+    <center><h1>List of 5 quotes</h1></center>
     <ul class="list-group">
+        {% for quote in quotes %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            A list item
-            <span class="badge bg-primary rounded-pill">14</span>
+            <h5>{{ quote.content }}</h5>
+            <span class="badge bg-success"><b><a href=""
+                                                 style="text-decoration: none; color: white">{{ quote.author }}</a></b></span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            A second list item
-            <span class="badge bg-primary rounded-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            A third list item
-            <span class="badge bg-primary rounded-pill">1</span>
-        </li>
+        {% endfor %}
     </ul>
+    <br>
+    <p class="text-center text-body-secondary">WebSite created by <a style="text-decoration: none"
+                                                                     href="https://github.com/xusraw1"><b>Khusrav
+        Makhmadjanov</b></a></p>
 </div>
 </body>
 </html>
