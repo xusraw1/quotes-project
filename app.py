@@ -27,5 +27,19 @@ def quotes():
     return render_template('quotes_list.html', quotes=quotes['quotes'])
 
 
+@app.route('/<auth>/quotes')
+def author(auth):
+    response = requests.get(f"https://api.quotable.io/quotes?author={auth}").json()['results']
+    list = random.choice(response)
+
+    return render_template("author.html", quote=list)
+
+
+@app.route('/short_quote')
+def short_quote():
+    response = requests.get("https://api.quotable.io/quotes/random?maxLength=50").json()
+    return render_template("short.html", quote=response[0])
+
+
 if __name__ == '__main__':
     app.run(debug=True)

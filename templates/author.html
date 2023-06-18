@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ quote.author }}{% endblock %}
+{% block content %}
+<div class="modal modal-sheet position-static d-block bg-body-primary p-4 py-md-5" tabindex="-1" role="dialog"
+     id="modalSheet">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-3 shadow">
+            <center><h1 class="modal-title text-center" style="font-size: 50px; color: blue">{{ quote.author }}</h1>
+            </center>
+            <div class="modal-body py-1">
+                <center><p><b>{{ quote.content }}</b></p></center>
+            </div>
+            <hr>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="/{{ quote.author }}/quotes" class="btn btn-outline-warning"><b>Another quote</b></a>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
