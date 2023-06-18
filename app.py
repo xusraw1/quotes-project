@@ -7,5 +7,6 @@ app.config['SECRET_KEY'] = KEY
 
 @app.route('/')
 def main():
+
     return render_template('index.html')
 
