@@ -11,7 +11,7 @@
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Quote</a></li>
             <li class="nav-item"><a href="/quotes-list" class="nav-link">Quotes List</a></li>
-            <li class="nav-item"><a href="/quotes-long" class="nav-link">Long Quote</a></li>
+            <li class="nav-item"><a href="{{ url_for('long_quote') }}" class="nav-link">Long Quote</a></li>
             <li class="nav-item"><a href="{{ url_for('short_quote') }}" class="nav-link">Short Quote</a></li>
         </ul>
     </header>

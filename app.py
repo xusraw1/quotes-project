@@ -43,6 +43,11 @@ def short_quote():
     response = requests.get("https://api.quotable.io/quotes/random?maxLength=50").json()
     return render_template("short.html", quote=response[0])
 
+@app.route('/long_quote')
+def long_quote():
+    response = requests.get("https://api.quotable.io/quotes/random?minLength=100&maxLength=500").json()[0]
+    return render_template("long.html", quote=response)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
