@@ -19,8 +19,11 @@ def main():
 
 @app.route('/quotes-list')
 def quotes():
-    response = requests.get("https://api.quotable.io/quotes?page=1").json()['results']
-    list = random.sample(response, k=5)
+    ## Завтро не забудь добавить еще вторую страницу!!!
+    page = random.randint(1, 50)
+    response1 = requests.get(f"https://api.quotable.io/quotes?page={page}").json()['results']
+
+    list = random.sample(response1, k=10)
     quotes = {
         'quotes': list
     }
